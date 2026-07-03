@@ -65,13 +65,105 @@ The skill is built using a modular JIT structure. The agent only loads reference
 ## ⚡ Quick Start
 
 ### 1. Installation
-Install the skill into your target agent's global repository path:
+Below are configuration and installation guidelines for integrating `prompt-overengineer` into 14 major AI coding tools and agentic services:
 
+#### 🟢 Google Antigravity
+Copy the skill folder to the global config skills directory:
 ```bash
-# Google Antigravity / Claude Code
 mkdir -p ~/.gemini/config/skills/prompt-overengineer
 cp -r * ~/.gemini/config/skills/prompt-overengineer/
 ```
+
+#### 🟢 Claude Code
+Copy the skill folder to the global agent skills directory:
+```bash
+mkdir -p ~/.agent/skills/prompt-overengineer
+cp -r * ~/.agent/skills/prompt-overengineer/
+```
+
+#### 🟢 Codex
+Copy the skill folder to the global codex skills directory:
+```bash
+mkdir -p ~/.codex/skills/prompt-overengineer
+cp -r * ~/.codex/skills/prompt-overengineer/
+```
+
+#### 🟢 Cursor
+Copy the overkill template prompt to Cursor's project rules file at your workspace root:
+```bash
+cp assets/overkill-template.md .cursorrules
+```
+
+#### 🟢 Windsurf
+Copy the template rules to the `.windsurfrules` file in your workspace:
+```bash
+cp assets/overkill-template.md .windsurfrules
+```
+
+#### 🟢 VS Code GitHub Copilot
+Configure custom workspace instructions for GitHub Copilot in VS Code:
+```bash
+mkdir -p .github
+cp assets/overkill-template.md .github/copilot-instructions.md
+```
+
+#### 🟢 Roo Code / Roo Cline
+Define custom system prompt guidelines by copying to the global instructions path:
+```bash
+cp assets/overkill-template.md ~/.vscode/extensions/roo-mode-instructions.md
+```
+
+#### 🟢 Aider
+Load the overkill prompt template dynamically as Aider's system prompt:
+```bash
+aider --system-prompt "$(cat assets/overkill-template.md)"
+# Or configure locally in your workspace's .aider.conf.yml
+```
+
+#### 🟢 Continue.dev
+Reference the prompt template or system instructions in your global Continue configuration (`~/.continue/config.json`):
+```json
+{
+  "systemPrompt": "Insert content of assets/overkill-template.md here..."
+}
+```
+
+#### 🟢 Double.bot
+Define local system instructions at the project root for Double:
+```bash
+mkdir -p .double
+cp assets/overkill-template.md .double/instructions.md
+```
+
+#### 🟢 Supermaven
+Copy template rules to Supermaven's instruction path:
+```bash
+mkdir -p .supermaven
+cp assets/overkill-template.md .supermaven/instructions.md
+```
+
+#### 🟢 Sweep.dev
+Integrate the system prompt rules into Sweep's configuration file `.sweep.yaml`:
+```yaml
+# Add to .sweep.yaml
+system_prompt: |
+  Insert content of assets/overkill-template.md here...
+```
+
+#### 🟢 Tabby
+Append custom rules to Tabby's global configuration file at `~/.tabby/config.toml`:
+```toml
+# Append to ~/.tabby/config.toml
+[model.prompt_template]
+system = "Insert content of assets/overkill-template.md here..."
+```
+
+#### 🟢 GitHub Copilot CLI
+Configure the custom instruction wrapper in the Copilot CLI configuration:
+```bash
+# Add prompt rules to ~/.config/github-copilot-cli/config.json
+```
+
 
 ### 2. Execution
 Run the evaluation script to test a drafted prompt file locally:
