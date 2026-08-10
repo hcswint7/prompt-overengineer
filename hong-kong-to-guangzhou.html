@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>HKG → Guangzhou · Field Guide</title>
+<style>
+/* ============================================================
+   HK → GUANGZHOU FIELD GUIDE
+   Single-file, fully offline. No external requests of any kind.
+   ============================================================ */
+
+:root{
+  --paper:#F6F3EC;
+  --paper2:#FFFFFF;
+  --paper3:#EFEADF;
+  --ink:#14110E;
+  --ink2:#4A443C;
+  --ink3:#8A8175;
+  --rule:#1A1714;
+  --hair:#D8D1C4;
+
+  --blue:#1F4FD8;
+  --blue-bg:#E7EDFC;
+  --red:#C93A24;
+  --red-bg:#FBEAE6;
+  --green:#1B6E46;
+  --green-bg:#E4F1EA;
+  --amber:#9A6B04;
+  --amber-bg:#FBF0D8;
+  --violet:#5C36A0;
+  --violet-bg:#EEE8F9;
+
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Monaco,"Courier New",monospace;
+
+  --pad:20px;
+  --maxw:760px;
+}
+
+*{box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- progress + nav ---------- */
+#bar{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--red);z-index:99;transition:width .1s linear}
+#tocbtn{
+  position:fixed;right:14px;bottom:14px;z-index:98;
+  background:var(--ink);color:var(--paper);border:none;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  padding:12px 14px;border-radius:999px;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+#toc{
+  position:fixed;inset:auto 12px 64px 12px;z-index:98;
+  background:var(--ink);color:var(--paper);border-radius:14px;
+  padding:10px;display:none;max-height:62vh;overflow:auto;
+  box-shadow:0 10px 40px rgba(0,0,0,.35);
+}
+#toc.open{display:block}
+#toc a{
+  display:block;color:var(--paper);text-decoration:none;
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+  padding:9px 10px;border-radius:8px;border-bottom:1px solid rgba(255,255,255,.09)
+}
+#toc a:last-child{border-bottom:none}
+#toc a span{color:#9C9384;margin-right:8px}
+
+/* ---------- type ---------- */
+.kicker{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink3);
+}
+h1{
+  font-size:clamp(44px,13vw,78px);line-height:.92;margin:.18em 0 0;
+  letter-spacing:-.035em;font-weight:800;
+}
+h1 em{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  letter-spacing:-.02em;color:var(--blue);display:block;
+}
+h2{
+  font-size:clamp(28px,7.5vw,42px);line-height:1.02;
+  letter-spacing:-.028em;font-weight:800;margin:0 0 .3em;
+}
+h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue)}
+h3{font-size:19px;line-height:1.25;letter-spacing:-.012em;font-weight:750;margin:0 0 6px}
+h4{font-size:15px;letter-spacing:-.005em;font-weight:750;margin:0 0 4px}
+p{margin:0 0 14px}
+.lede{font-size:19px;line-height:1.5;color:var(--ink2)}
+.small{font-size:14px;line-height:1.5}
+.tiny{font-size:12.5px;line-height:1.45;color:var(--ink2)}
+.mono{font-family:var(--mono)}
+b,strong{font-weight:700}
+a{color:var(--blue)}
+
+/* ---------- sections ---------- */
+section{padding:44px 0 8px;position:relative}
+.sechead{margin-bottom:22px}
+.sechead .num{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  color:var(--red);display:block;margin-bottom:8px;
+}
+hr.rule{border:none;border-top:1.5px solid var(--rule);margin:0}
+hr.hair{border:none;border-top:1px solid var(--hair);margin:18px 0}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--paper2);border:1.5px solid var(--rule);
+  border-radius:16px;padding:18px;margin:0 0 14px;
+  box-shadow:3px 3px 0 rgba(20,17,14,.08);
+}
+.card.flat{box-shadow:none}
+.card.tint-blue{background:var(--blue-bg);border-color:var(--blue)}
+.card.tint-red{background:var(--red-bg);border-color:var(--red)}
+.card.tint-green{background:var(--green-bg);border-color:var(--green)}
+.card.tint-amber{background:var(--amber-bg);border-color:var(--amber)}
+.card.tint-violet{background:var(--violet-bg);border-color:var(--violet)}
+
+.chip{
+  display:inline-block;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;
+  border:1.3px solid var(--rule);border-radius:999px;
+  padding:4px 10px;margin:0 5px 5px 0;background:var(--paper2);
+}
+.chip.b{border-color:var(--blue);color:var(--blue);background:var(--blue-bg)}
+.chip.r{border-color:var(--red);color:var(--red);background:var(--red-bg)}
+.chip.g{border-color:var(--green);color:var(--green);background:var(--green-bg)}
+.chip.a{border-color:var(--amber);color:var(--amber);background:var(--amber-bg)}
+.chip.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding:34px 0 10px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.heroline{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;
+  color:var(--ink2);margin-top:14px;
+}
+.heroline b{color:var(--ink)}
+
+/* ---------- stat tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 14px}
+.tile{
+  background:var(--paper2);border:1.5px solid var(--rule);border-radius:14px;
+  padding:14px;box-shadow:3px 3px 0 rgba(20,17,14,.08);
+}
+.tile .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.tile .val{font-size:clamp(26px,7.5vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:6px}
+.tile .sub{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.35}
+.tile.hi{background:var(--ink);border-color:var(--ink)}
+.tile.hi .lab{color:#9C9384}
+.tile.hi .val{color:#fff}
+.tile.hi .sub{color:#C9C1B4}
+
+/* ---------- verdict block ---------- */
+.verdict{
+  background:var(--ink);color:var(--paper);border-radius:20px;
+  padding:24px 20px;margin:0 0 16px;
+}
+.verdict .kicker{color:#9C9384}
+.verdict h2{color:#fff}
+.verdict h2 em{color:#7FA0F5;display:block}
+.verdict p{color:#D6CFC2}
+.vsteps{list-style:none;padding:0;margin:16px 0 0;counter-reset:v}
+.vsteps li{
+  counter-increment:v;position:relative;padding:11px 0 11px 42px;
+  border-top:1px solid rgba(255,255,255,.14);font-size:15.5px;line-height:1.4;
+}
+.vsteps li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.vsteps li::before{
+  content:counter(v);position:absolute;left:0;top:11px;
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(255,255,255,.11);color:#fff;
+  font-family:var(--mono);font-size:11.5px;
+  display:flex;align-items:center;justify-content:center;
+}
+.vsteps .t{
+  float:right;font-family:var(--mono);font-size:11.5px;
+  color:#9C9384;margin-left:8px;
+}
+.vsteps b{color:#fff}
+
+/* ---------- timeline ---------- */
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl::before{
+  content:"";position:absolute;left:17px;top:12px;bottom:12px;
+  width:2px;background:var(--hair);
+}
+.tl > li{position:relative;padding:0 0 14px 48px}
+.node{
+  position:absolute;left:0;top:2px;width:36px;height:36px;
+  border-radius:50%;background:var(--paper2);
+  border:1.5px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:2px 2px 0 rgba(20,17,14,.10);
+}
+.node svg{width:19px;height:19px}
+.node.blue{background:var(--blue);border-color:var(--blue);color:#fff}
+.node.red{background:var(--red);border-color:var(--red);color:#fff}
+.node.green{background:var(--green);border-color:var(--green);color:#fff}
+.node.violet{background:var(--violet);border-color:var(--violet);color:#fff}
+.node.ink{background:var(--ink);border-color:var(--ink);color:#fff}
+.legmeta{
+  display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0;
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink2)
+}
+.legmeta span{background:var(--paper3);border-radius:6px;padding:3px 7px}
+
+/* ---------- tables ---------- */
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 14px;
+  border:1.5px solid var(--rule);border-radius:14px;background:var(--paper2)}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
+/* 2-column tables must fit a phone without sideways scrolling */
+.tblwrap.fit{overflow-x:visible}
+.tblwrap.fit table{min-width:0}
+.tblwrap.fit td.num{font-size:13px;padding-right:6px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top}
+th{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink2);background:var(--paper3);border-bottom:1.5px solid var(--rule);
+  position:sticky;top:0;
+}
+tr:last-child td{border-bottom:none}
+td.num{font-family:var(--mono);white-space:nowrap}
+.win{background:var(--green-bg)}
+.win td{font-weight:600}
+
+/* ---------- callouts ---------- */
+.callout{border-left:4px solid var(--blue);background:var(--blue-bg);
+  border-radius:0 12px 12px 0;padding:13px 15px;margin:0 0 14px}
+.callout.warn{border-color:var(--red);background:var(--red-bg)}
+.callout.good{border-color:var(--green);background:var(--green-bg)}
+.callout.note{border-color:var(--amber);background:var(--amber-bg)}
+.callout .h{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;margin-bottom:5px;font-weight:600
+}
+.callout.warn .h{color:var(--red)}
+.callout.good .h{color:var(--green)}
+.callout.note .h{color:var(--amber)}
+.callout .h{color:var(--blue)}
+.callout p:last-child{margin-bottom:0}
+
+/* ---------- avoid list ---------- */
+.avoid{list-style:none;padding:0;margin:0}
+.avoid li{
+  background:var(--paper2);border:1.5px solid var(--red);border-left-width:5px;
+  border-radius:12px;padding:13px 15px;margin:0 0 10px;
+}
+.avoid .t{font-weight:750;font-size:15.5px;margin-bottom:4px;display:block}
+.avoid .why{font-size:14px;color:var(--ink2);line-height:1.5}
+.avoid .fix{font-size:13.5px;margin-top:7px;padding-top:7px;border-top:1px dashed var(--hair)}
+.avoid .fix b{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--green)}
+
+/* ---------- checklist ---------- */
+.check{list-style:none;padding:0;margin:0}
+.check li{
+  display:flex;gap:11px;align-items:flex-start;
+  background:var(--paper2);border:1.5px solid var(--rule);border-radius:12px;
+  padding:12px 14px;margin:0 0 8px;
+}
+.check input{
+  appearance:none;-webkit-appearance:none;flex:0 0 auto;
+  width:21px;height:21px;margin:1px 0 0;border:1.5px solid var(--rule);
+  border-radius:6px;background:var(--paper);cursor:pointer;position:relative;
+}
+.check input:checked{background:var(--green);border-color:var(--green)}
+.check input:checked::after{
+  content:"";position:absolute;left:6.5px;top:2.5px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(42deg);
+}
+.check label{font-size:14.5px;line-height:1.45;cursor:pointer}
+.check input:checked + label{color:var(--ink3);text-decoration:line-through}
+
+/* ---------- confidence ---------- */
+.conf{list-style:none;padding:0;margin:0}
+.conf li{padding:11px 0;border-bottom:1px solid var(--hair);font-size:14px;line-height:1.5}
+.conf li:last-child{border-bottom:none}
+.conf .lv{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;
+  padding:2px 7px;border-radius:5px;margin-right:8px;white-space:nowrap;
+  text-transform:uppercase;font-weight:600;
+}
+.lv.hard{background:var(--green);color:#fff}
+.lv.soft{background:var(--amber);color:#fff}
+.lv.check{background:var(--red);color:#fff}
+
+/* ---------- figures ---------- */
+figure{margin:0 0 16px}
+figure svg{display:block;width:100%;height:auto;
+  border:1.5px solid var(--rule);border-radius:14px;background:var(--paper2)}
+figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+  color:var(--ink3);margin-top:7px;line-height:1.4}
+
+/* ---------- footer ---------- */
+footer{
+  background:var(--ink);color:#B8B0A2;margin-top:44px;
+  padding:30px 0 96px;font-size:13px;line-height:1.6
+}
+footer .wrap{max-width:var(--maxw)}
+footer b{color:#fff}
+footer .kicker{color:#8A8175}
+
+@media (min-width:620px){
+  .tiles{grid-template-columns:repeat(4,1fr)}
+  :root{--pad:28px}
+}
+@media print{
+  #bar,#tocbtn,#toc{display:none}
+  body{background:#fff}
+  .card,.tile,figure svg{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<!-- ========== ICON SPRITE (offline, inline) ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-hotel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 21V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v16"/><path d="M15 10h5a1 1 0 0 1 1 1v10"/>
+    <path d="M2 21h20"/><path d="M7 8h2M7 12h2M7 16h2"/>
+  </symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 17V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11"/><path d="M4 11h16"/>
+    <path d="M3 17h18"/><circle cx="7.5" cy="19" r="1.6"/><circle cx="16.5" cy="19" r="1.6"/>
+  </symbol>
+  <symbol id="i-metro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 10h14"/>
+    <path d="M8 20l-2 2M16 20l2 2"/><circle cx="8.5" cy="13" r="1"/><circle cx="15.5" cy="13" r="1"/>
+  </symbol>
+  <symbol id="i-train" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 15V7a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"/>
+    <path d="M4 9h16"/><path d="M8 21l-2 2M16 21l2 2"/><circle cx="8" cy="13.5" r="1"/><circle cx="16" cy="13.5" r="1"/>
+  </symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="13" cy="4" r="2"/><path d="M11 21l1.5-6-2.5-3 1-5 3 3 3 1"/><path d="M9.5 12L7 21"/>
+  </symbol>
+  <symbol id="i-passport" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3.2"/><path d="M8.5 17h7"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+  </symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 22V3"/><path d="M5 4h12l-2.5 4L17 12H5"/>
+  </symbol>
+</defs></svg>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Field Guide · Route Dossier · Offline</span>
+    <h1>Hong&nbsp;Kong<em>to Guangzhou</em></h1>
+    <div class="heroline">
+      <span><b>FROM</b> Four Points by Sheraton, Tung Chung</span>
+      <span><b>TO</b> Yuexiu Park / Beijing Road</span>
+    </div>
+    <div class="meta">
+      <span class="chip solid">Strategy locked</span>
+      <span class="chip b">High-speed rail</span>
+      <span class="chip g">≈ HK$260 total</span>
+      <span class="chip a">≈ 3 hrs 50 door-to-door</span>
+      <span class="chip">US passport · China visa held</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= VERDICT ================= -->
+<section id="verdict">
+  <div class="wrap">
+    <div class="verdict">
+      <span class="kicker">The decision</span>
+      <h2>Take the train.<em>Guangzhou South.</em></h2>
+      <p class="small">Tung Chung Line to Austin, walk the covered bridge into West Kowloon, clear both
+      borders in one building, then 47–65 minutes of 300&nbsp;km/h to Guangzhou South and a single
+      no-transfer Metro Line 2 ride into the middle of the city.</p>
+      <ol class="vsteps">
+        <li><span class="t">~10 min</span><b>Hotel shuttle</b> → Tung Chung MTR</li>
+        <li><span class="t">~25 min</span><b>Tung Chung Line</b> → Nam Cheong</li>
+        <li><span class="t">~5 min</span><b>Cross-platform</b> → Tuen Ma Line → Austin</li>
+        <li><span class="t">~10 min</span><b>Covered walkway</b> → West Kowloon Station</li>
+        <li><span class="t">~75 min</span><b>Check-in + both borders</b> (co-located)</li>
+        <li><span class="t">~50 min</span><b>G-train</b> → Guangzhou South</li>
+        <li><span class="t">~55 min</span><b>Station walk + Metro Line 2</b> → Gongyuanqian</li>
+      </ol>
+      <p class="tiny" style="color:#9C9384;margin:12px 0 0">Totals 3 h 50 m including realistic waits.
+      Tighten the station buffer to 45 minutes once you know the route and it's about 3 h 20 m.</p>
+    </div>
+
+    <div class="tiles">
+      <div class="tile hi">
+        <div class="lab">Door to door</div>
+        <div class="val">3h50</div>
+        <div class="sub">3h20 with a tighter buffer</div>
+      </div>
+      <div class="tile">
+        <div class="lab">Total cost</div>
+        <div class="val">HK$260</div>
+        <div class="sub">≈ US$33 · range 240–280</div>
+      </div>
+      <div class="tile">
+        <div class="lab">On the train</div>
+        <div class="val">47<span style="font-size:.5em"> min</span></div>
+        <div class="sub">Fastest service; 50–65 typical</div>
+      </div>
+      <div class="tile">
+        <div class="lab">Border stops</div>
+        <div class="val">1</div>
+        <div class="sub">One queue, both sides</div>
+      </div>
+    </div>
+
+    <div class="callout good">
+      <div class="h">Why this beats the coach</div>
+      <p class="small" style="margin:0">The direct HKIA→Guangzhou coach costs about the same (HK$250) but the ride
+      alone is 3–3.5 hours — closer to <b>4h50 door to door</b>, an hour worse than the train. It sits in traffic,
+      and it makes you get off at the border, walk through immigration, and re-board. The train is faster, runs to
+      a fixed schedule, and you clear both borders standing still in one building.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= ROUTE MAP ================= -->
+<section id="map">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">01 — THE SHAPE OF IT</span>
+      <h2>The whole <em>route</em>, one picture</h2>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 360 470" role="img" aria-label="Route diagram from Four Points Tung Chung to Guangzhou city centre">
+        <rect width="360" height="470" fill="#FFFFFF"/>
+        <!-- spine -->
+        <line x1="46" y1="42" x2="46" y2="428" stroke="#D8D1C4" stroke-width="3"/>
+        <line x1="46" y1="42" x2="46" y2="150" stroke="#1F4FD8" stroke-width="3"/>
+        <line x1="46" y1="150" x2="46" y2="248" stroke="#C93A24" stroke-width="3"/>
+        <line x1="46" y1="248" x2="46" y2="340" stroke="#5C36A0" stroke-width="3"/>
+        <line x1="46" y1="340" x2="46" y2="428" stroke="#1B6E46" stroke-width="3"/>
+
+        <!-- nodes -->
+        <g font-family="ui-monospace,Menlo,monospace">
+          <circle cx="46" cy="42"  r="9" fill="#14110E"/>
+          <text x="70" y="39" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Four Points · Tung Chung</text>
+          <text x="70" y="55" font-size="10.5" fill="#8A8175">Free hotel shuttle · 5 min</text>
+
+          <circle cx="46" cy="105" r="7" fill="#1F4FD8"/>
+          <text x="70" y="102" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Tung Chung MTR</text>
+          <text x="70" y="118" font-size="10.5" fill="#8A8175">Tung Chung Line · 4 stops · 20 min</text>
+
+          <circle cx="46" cy="150" r="7" fill="#1F4FD8"/>
+          <text x="70" y="147" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Nam Cheong</text>
+          <text x="70" y="163" font-size="10.5" fill="#8A8175">Cross-platform → Tuen Ma · 1 stop</text>
+
+          <circle cx="46" cy="196" r="7" fill="#C93A24"/>
+          <text x="70" y="193" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Austin</text>
+          <text x="70" y="209" font-size="10.5" fill="#8A8175">Covered walkway · 3–5 min</text>
+
+          <rect x="36" y="238" width="20" height="20" rx="4" fill="#C93A24"/>
+          <text x="70" y="246" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">West Kowloon Station</text>
+          <text x="70" y="262" font-size="10.5" fill="#8A8175">Check-in + BOTH borders · budget 75 min</text>
+
+          <circle cx="46" cy="300" r="7" fill="#5C36A0"/>
+          <text x="70" y="291" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">G-train · 300 km/h</text>
+          <text x="70" y="307" font-size="10.5" fill="#8A8175">Futian · Shenzhen North · Humen</text>
+
+          <rect x="36" y="330" width="20" height="20" rx="4" fill="#5C36A0"/>
+          <text x="70" y="338" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Guangzhou South</text>
+          <text x="70" y="354" font-size="10.5" fill="#8A8175">Arrive · walk down to Metro</text>
+
+          <circle cx="46" cy="386" r="7" fill="#1B6E46"/>
+          <text x="70" y="383" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Metro Line 2 · no transfer</text>
+          <text x="70" y="399" font-size="10.5" fill="#8A8175">≈12 stops · 35–45 min · ¥6</text>
+
+          <circle cx="46" cy="428" r="9" fill="#1B6E46"/>
+          <text x="70" y="425" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Gongyuanqian / Yuexiu Park</text>
+          <text x="70" y="441" font-size="10.5" fill="#8A8175">Beijing Road is a short walk from Gongyuanqian</text>
+        </g>
+
+        <!-- border marker -->
+        <g>
+          <line x1="20" y1="272" x2="340" y2="272" stroke="#C93A24" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <rect x="238" y="264" width="96" height="17" rx="8" fill="#C93A24"/>
+          <text x="286" y="276" font-size="9.5" fill="#fff" text-anchor="middle"
+                font-family="ui-monospace,Menlo,monospace" letter-spacing="1">BORDER (HERE)</text>
+        </g>
+      </svg>
+      <figcaption>The border is crossed inside West Kowloon Station before you board — not en route.
+      Once you are on the train you are done with immigration.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= LEG BY LEG ================= -->
+<section id="legs">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">02 — DEEP DIVE</span>
+      <h2>Leg by <em>leg</em></h2>
+      <p class="lede">Everything you actually need at each step, in order.</p>
+    </div>
+
+    <ul class="tl">
+      <li>
+        <div class="node"><svg><use href="#i-hotel"/></svg></div>
+        <div class="card flat">
+          <h3>Four Points → Tung Chung MTR</h3>
+          <p class="small" style="margin-bottom:0">The hotel runs a <b>free shuttle to Tung Chung MTR station</b>
+          (separate from its airport shuttle). It's roughly a 5-minute ride. Tung Chung town centre is compact —
+          if you just miss a shuttle, it is a walkable 10–15 minutes via Citygate Outlets rather than a wait.</p>
+          <div class="legmeta"><span>FREE</span><span>~5 MIN</span><span>SHUTTLE OR WALK</span></div>
+          <div class="callout note" style="margin:12px 0 0">
+            <div class="h">Confirm this the night before</div>
+            <p class="small" style="margin:0">Shuttle departure times are a fixed published timetable, not on-demand.
+            Ask the front desk for the printed schedule when you check in and photograph it. This is the single
+            softest link in the chain.</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="node blue"><svg><use href="#i-metro"/></svg></div>
+        <div class="card flat">
+          <h3>Tung Chung Line → Nam Cheong</h3>
+          <p class="small">Board the <b>Tung Chung Line</b> (orange) toward Hong Kong. Tung Chung is the terminus,
+          so every train is yours and you'll get a seat with luggage space.</p>
+          <p class="small" style="margin-bottom:0"><b>Four stops:</b> Sunny Bay → Tsing Yi → Lai King → <b>Nam Cheong</b>.</p>
+          <div class="legmeta"><span>~20 MIN</span><span>4 STOPS</span><span>OCTOPUS OR CARD TAP</span></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="node blue"><svg><use href="#i-metro"/></svg></div>
+        <div class="card flat">
+          <h3>Nam Cheong → Austin</h3>
+          <p class="small">Nam Cheong is a <b>cross-platform interchange</b> — walk across the same platform to the
+          Tuen Ma Line (brown) heading toward Hung Hom / Wu Kai Sha. No stairs, no tunnels, no escalator hunting
+          with a suitcase.</p>
+          <p class="small" style="margin-bottom:0"><b>Austin is the very next stop.</b></p>
+          <div class="legmeta"><span>~3 MIN</span><span>1 STOP</span><span>SAME PLATFORM</span></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="node red"><svg><use href="#i-walk"/></svg></div>
+        <div class="card flat">
+          <h3>Austin → West Kowloon Station</h3>
+          <p class="small" style="margin-bottom:0">Follow <b>Exit C or D</b>. Austin connects to the high-speed rail
+          station by a short <b>air-conditioned covered walkway, about 3–5 minutes</b>.</p>
+          <div class="legmeta"><span>3–5 MIN</span><span>COVERED</span><span>STEP-FREE</span></div>
+          <div class="callout" style="margin:12px 0 0">
+            <div class="h">Why Austin, not Kowloon station</div>
+            <p class="small" style="margin:0">Most guides route you via Kowloon station, which means an
+            <b>8–10 minute walk through Elements mall</b>. Austin is half that, covered, and far less confusing
+            with bags. Going via Nam Cheong → Austin also saves a stop on the Tung Chung Line.</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="node ink"><svg><use href="#i-passport"/></svg></div>
+        <div class="card flat">
+          <h3>Inside West Kowloon — the 75 minutes that matter</h3>
+          <p class="small">This is the only genuinely time-consuming part, and it is where people miss trains.
+          The station is a stacked sequence — you only move downward, and <b>you cannot go back up once you've
+          cleared immigration</b>.</p>
+
+          <figure style="margin:14px 0">
+            <svg viewBox="0 0 360 250" role="img" aria-label="Cross-section of West Kowloon Station levels">
+              <rect width="360" height="250" fill="#FFFFFF"/>
+              <g font-family="-apple-system,Helvetica,Arial,sans-serif">
+                <rect x="24" y="18" width="312" height="42" rx="9" fill="#EFEADF" stroke="#1A1714" stroke-width="1.5"/>
+                <text x="40" y="38" font-size="12.5" font-weight="700" fill="#14110E">B1 · Ticketing concourse</text>
+                <text x="40" y="52" font-size="10.5" fill="#4A443C">Collect / verify ticket · passport check · last shops</text>
+
+                <path d="M180 62 l0 12 M174 70 l6 8 6-8" stroke="#C93A24" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+                <rect x="24" y="82" width="312" height="42" rx="9" fill="#FBEAE6" stroke="#C93A24" stroke-width="1.5"/>
+                <text x="40" y="102" font-size="12.5" font-weight="700" fill="#14110E">Security screening</text>
+                <text x="40" y="116" font-size="10.5" fill="#4A443C">Bags x-rayed · no liquid rules like flying</text>
+
+                <path d="M180 126 l0 12 M174 134 l6 8 6-8" stroke="#C93A24" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+                <rect x="24" y="146" width="312" height="50" rx="9" fill="#E7EDFC" stroke="#1F4FD8" stroke-width="1.5"/>
+                <text x="40" y="166" font-size="12.5" font-weight="700" fill="#14110E">Co-location immigration</text>
+                <text x="40" y="180" font-size="10.5" fill="#4A443C">HK exit, then Mainland entry — same building,</text>
+                <text x="40" y="192" font-size="10.5" fill="#4A443C">back to back. Fingerprints + face scan on the China side.</text>
+
+                <path d="M180 198 l0 10 M174 204 l6 8 6-8" stroke="#C93A24" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+                <rect x="24" y="212" width="312" height="26" rx="9" fill="#14110E"/>
+                <text x="40" y="229" font-size="12" font-weight="700" fill="#FFFFFF">Departure hall → gate → platform</text>
+              </g>
+            </svg>
+            <figcaption>Level labels vary slightly between sources; the <em>order</em> of steps is what's reliable. Just follow signage downward.</figcaption>
+          </figure>
+
+          <div class="callout warn">
+            <div class="h">Hard cutoff</div>
+            <p class="small" style="margin:0"><b>Gates open 15 minutes before departure and close 5 minutes before.</b>
+            The train does not wait. Miss the gate and your ticket is dead.</p>
+          </div>
+
+          <p class="small"><b>How much buffer?</b> MTR lets you start the process 90 minutes ahead and suggests up to
+          120 in peak. Realistically the whole sequence takes 30–45 minutes off-peak. Since this is your first time
+          on this specific route, <b>plan to be inside the station 75 minutes before departure</b> — that leaves a
+          real cushion and you can spend the slack sitting down airside.</p>
+
+          <p class="small" style="margin-bottom:0">Add 20–30 minutes on top during Chinese public holidays,
+          Friday evenings, and Sunday afternoons.</p>
+          <div class="legmeta"><span>BUDGET 75 MIN</span><span>NO RE-ENTRY</span><span>GATE SHUTS T−5</span></div>
+        </div>
+      </li>
+
+      <li>
+        <div class="node violet"><svg><use href="#i-train"/></svg></div>
+        <div class="card flat">
+          <h3>The train — West Kowloon → Guangzhou South</h3>
+          <p class="small">Roughly <b>50–60 departures a day</b>, first around <b>07:20</b>, last around
+          <b>22:40</b>. Typical stops are Futian, Shenzhen North, Humen and Qingsheng.</p>
+          <p class="small" style="margin-bottom:0">Second class is perfectly comfortable for under an hour and is
+          what you want. First class is roughly 55% more for a marginally wider seat on a 50-minute ride.</p>
+          <div class="legmeta"><span>47 MIN FASTEST</span><span>50–65 TYPICAL</span><span>≈HK$215–247</span><span>2ND CLASS</span></div>
+          <div class="callout note" style="margin:12px 0 0">
+            <div class="h">Luggage</div>
+            <p class="small" style="margin:0">No checked bags — everything comes onboard with you. Official limit is
+            20&nbsp;kg and 130&nbsp;cm total dimensions, but it is not weighed or measured in practice. Overhead racks
+            take a 24-inch case; there are larger end-of-car racks for bigger bags.</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="node green"><svg><use href="#i-metro"/></svg></div>
+        <div class="card flat">
+          <h3>Guangzhou South → your hotel</h3>
+          <p class="small">Guangzhou South is enormous. Follow signs down to <b>Metro Line 2</b> — allow 10 minutes
+          just to walk it. Line 2 <b>starts here</b>, so you board at the terminus and get a seat.</p>
+          <p class="small"><b>No transfer required.</b> Stay on Line 2 all the way:</p>
+          <div style="margin:0 0 12px">
+            <span class="chip g">Gongyuanqian · for Beijing Road</span>
+            <span class="chip g">Yuexiu Park · 1 stop further</span>
+          </div>
+          <p class="small" style="margin-bottom:0">Sources disagree on timing between 33 and 43 minutes — <b>budget 45</b>.
+          Fare is about <b>¥6</b>.</p>
+          <div class="legmeta"><span>LINE 2</span><span>≈12 STOPS</span><span>NO TRANSFER</span><span>¥6</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= TIMING ================= -->
+<section id="timing">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">03 — WORK BACKWARDS</span>
+      <h2>What time do I <em>leave?</em></h2>
+      <p class="lede">Pick your train, then read up the column. This is the only maths that matters.</p>
+    </div>
+
+    <div class="tblwrap fit">
+      <table>
+        <thead>
+          <tr><th>Clock</th><th>Where you are</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">T − 2:15</td><td><b>Leave the hotel lobby.</b> Catch the shuttle to Tung Chung MTR.</td></tr>
+          <tr><td class="num">T − 2:05</td><td>Tapping in at Tung Chung MTR.</td></tr>
+          <tr><td class="num">T − 2:00</td><td>On board the Tung Chung Line.</td></tr>
+          <tr><td class="num">T − 1:40</td><td>Nam Cheong. Cross the platform to the Tuen Ma Line.</td></tr>
+          <tr><td class="num">T − 1:35</td><td>Austin. Follow Exit C/D signs for the High Speed Rail.</td></tr>
+          <tr class="win"><td class="num">T − 1:25</td><td><b>Inside West Kowloon Station.</b></td></tr>
+          <tr><td class="num">T − 1:15</td><td>Latest acceptable start of ticket + security + immigration.</td></tr>
+          <tr><td class="num">T − 0:35</td><td>Through both borders, airside, sitting down.</td></tr>
+          <tr><td class="num">T − 0:15</td><td>Gate opens. Be standing there.</td></tr>
+          <tr><td class="num">T − 0:05</td><td><b>Gate closes.</b> Point of no return.</td></tr>
+          <tr><td class="num">T − 0:00</td><td>Departure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="h">Worked example</div>
+      <p class="small" style="margin:0">For a <b>10:00 train</b>, leave the hotel at <b>07:45</b> and be inside
+      West Kowloon by <b>08:45</b>. You'd reach Gongyuanqian around <b>11:45</b>.</p>
+    </div>
+
+    <div class="callout note">
+      <div class="h">Add a buffer if…</div>
+      <p class="small" style="margin:0">It's a Chinese public holiday, a Friday evening, or a Sunday afternoon —
+      add 20–30 minutes. If it's the last train of the night, add it regardless; there is no next one.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= BOOKING ================= -->
+<section id="booking">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">04 — TICKETS</span>
+      <h2>Booking it with a <em>US passport</em></h2>
+    </div>
+
+    <div class="card">
+      <h3>Book ahead, not at the station</h3>
+      <p class="small">The booking window opens roughly <b>14–15 days</b> before travel. The fastest trains
+      genuinely sell out, especially around weekends and holidays. Book as soon as your date is fixed.</p>
+      <p class="small" style="margin-bottom:0">Your passport is a valid booking ID — the same passport you use to
+      book <b>is</b> your ticket.</p>
+    </div>
+
+    <div class="card">
+      <h3>Where to book</h3>
+      <p class="small"><b>Trip.com</b> — easiest for a foreign passport, English throughout, accepts foreign cards.
+      Small service fee. This is the pragmatic choice.</p>
+      <p class="small"><b>MTR High Speed Rail site</b> — the official Hong Kong channel for the HK-origin leg.</p>
+      <p class="small" style="margin-bottom:0"><b>Station counters at West Kowloon</b> — works, but only as a fallback.
+      Turning up unbooked on a busy day is how you end up on a train two hours later.</p>
+    </div>
+
+    <div class="card tint-green">
+      <h3>No paper ticket needed</h3>
+      <p class="small" style="margin-bottom:0">Paper collection has been phased out. Bring the
+      <b>physical passport you booked with</b> and your reservation number. Scan the passport at the gate.
+      If a self-service machine rejects it — some only read Mainland/HK ID — <b>go to a staffed counter</b>.
+      That's normal, not a problem with your booking.</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="h">Name must match exactly</div>
+      <p class="small" style="margin:0">Book with your passport name and number character-for-character.
+      A mismatch is refused at the gate and there is no talking your way through it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= AVOID ================= -->
+<section id="avoid">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">05 — TRAPS</span>
+      <h2>Things to <em>avoid</em></h2>
+      <p class="lede">Each of these is a real, specific way this trip goes wrong.</p>
+    </div>
+
+    <ul class="avoid">
+      <li>
+        <span class="t">Don't book a train to Guangzhou <u>East</u></span>
+        <span class="why">It looks better on a map — Guangzhou East is in Tianhe, much closer to the centre than
+        Guangzhou South. Several booking sites advertise it at "47 minutes". <b>That figure is wrong.</b>
+        Actual Guangzhou East services run roughly <b>1h40–1h48</b> because they route via the conventional
+        Guangshen railway through Dongguan, not the full high-speed alignment. Real examples: G6545, G6565, G6553
+        all take about 1h45.</span>
+        <span class="fix"><b>INSTEAD →</b> Guangzhou South. The extra ~25 minutes of metro is far cheaper than
+        the ~55 extra minutes on the train. South also has 50+ daily departures vs roughly 13–26 to East.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't route via Kowloon station and Elements mall</span>
+        <span class="why">It's the default advice everywhere, and it's an 8–10 minute walk through a shopping centre
+        with luggage.</span>
+        <span class="fix"><b>INSTEAD →</b> Nam Cheong → Austin → 3–5 minute covered walkway.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't cut the West Kowloon buffer close</span>
+        <span class="why">The gate closes 5 minutes before departure, hard. Two immigration checks sit between you
+        and the platform, and there is no re-entry once you're through.</span>
+        <span class="fix"><b>INSTEAD →</b> Be inside the station 75 minutes ahead. Spend the slack airside, not landside.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't assume a VPN will get you Google in Guangzhou</span>
+        <span class="why">The Great Firewall blocks Google, Gmail, Maps, WhatsApp, Instagram and most Western news
+        regardless of whose SIM you use — and VPN reliability degraded sharply through 2026.</span>
+        <span class="fix"><b>INSTEAD →</b> Install a roaming travel eSIM <em>before</em> you cross. Traffic routes
+        via a foreign network so your normal apps work. You cannot download the profile once you're inside.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't rely on your card at small vendors</span>
+        <span class="why">Guangzhou runs on QR payment. Foreign cards now work at metro gates and larger merchants,
+        but plenty of places are Alipay/WeChat only.</span>
+        <span class="fix"><b>INSTEAD →</b> Set up Alipay with your passport and a foreign card before you travel,
+        and carry a couple of hundred yuan in cash as backup.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't take the direct HKIA coach by default</span>
+        <span class="why">Same price as the train, but 3.5–4 hours, traffic-dependent, and you disembark at the
+        border to walk through immigration and re-board.</span>
+        <span class="fix"><b>INSTEAD →</b> Only use it as a fallback if the rail line is disrupted.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't buy from anyone approaching you at the station</span>
+        <span class="why">Tickets are ID-linked and non-transferable. A ticket bought in someone else's name is
+        worthless to you at the gate.</span>
+        <span class="fix"><b>INSTEAD →</b> Official counters, official app, or Trip.com. Nothing else.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= COMPARISON ================= -->
+<section id="compare">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">06 — THE OTHER OPTIONS</span>
+      <h2>What I <em>rejected</em>, and why</h2>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 360 220" role="img" aria-label="Bar chart comparing door-to-door journey times">
+        <rect width="360" height="220" fill="#FFFFFF"/>
+        <g font-family="-apple-system,Helvetica,Arial,sans-serif">
+          <text x="18" y="24" font-size="11" font-weight="700" fill="#14110E">DOOR-TO-DOOR TIME (HOURS)</text>
+
+          <!-- gridlines · scale: 40px = 1 hour -->
+          <g stroke="#EFEADF" stroke-width="1">
+            <line x1="18" y1="40" x2="18" y2="186"/>
+            <line x1="98" y1="40" x2="98" y2="186"/>
+            <line x1="178" y1="40" x2="178" y2="186"/>
+            <line x1="258" y1="40" x2="258" y2="186"/>
+          </g>
+
+          <rect x="18" y="48" width="153" height="24" rx="5" fill="#1B6E46"/>
+          <text x="179" y="65" font-size="11.5" font-weight="700" fill="#1B6E46">3h50</text>
+          <text x="18" y="43" font-size="10.5" font-weight="700" fill="#14110E">HSR via Guangzhou South ✓</text>
+
+          <rect x="18" y="86" width="173" height="24" rx="5" fill="#8A8175"/>
+          <text x="199" y="103" font-size="11.5" font-weight="700" fill="#4A443C">4h20</text>
+          <text x="18" y="81" font-size="10.5" fill="#4A443C">HSR via Guangzhou East</text>
+
+          <rect x="18" y="124" width="193" height="24" rx="5" fill="#8A8175"/>
+          <text x="219" y="141" font-size="11.5" font-weight="700" fill="#4A443C">4h50</text>
+          <text x="18" y="119" font-size="10.5" fill="#4A443C">Direct coach from HKIA</text>
+
+          <rect x="18" y="162" width="220" height="24" rx="5" fill="#C93A24"/>
+          <text x="246" y="179" font-size="11.5" font-weight="700" fill="#C93A24">5h30+</text>
+          <text x="18" y="157" font-size="10.5" fill="#4A443C">Via Shenzhen (your last route)</text>
+
+          <!-- axis -->
+          <g font-family="ui-monospace,Menlo,monospace" font-size="9" fill="#8A8175">
+            <text x="18" y="200">0</text>
+            <text x="94" y="200">2h</text>
+            <text x="174" y="200">4h</text>
+            <text x="254" y="200">6h</text>
+          </g>
+          <text x="18" y="214" font-size="9" fill="#8A8175" font-family="ui-monospace,Menlo,monospace">Includes station buffer + city transfer at both ends</text>
+        </g>
+      </svg>
+      <figcaption>Times are realistic door-to-door estimates from Tung Chung to Yuexiu Park / Beijing Road, not raw vehicle times.</figcaption>
+    </figure>
+
+    <p class="tiny mono" style="color:var(--ink3);margin:0 0 6px">Swipe the table sideways for the verdict column →</p>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr><th>Option</th><th>Time</th><th>Cost</th><th>Verdict</th></tr>
+        </thead>
+        <tbody>
+          <tr class="win">
+            <td><b>HSR → Guangzhou South</b></td>
+            <td class="num">≈3h50</td>
+            <td class="num">≈HK$260</td>
+            <td>Fastest, most frequent, one border queue. <b>Chosen.</b></td>
+          </tr>
+          <tr>
+            <td>HSR → Guangzhou East</td>
+            <td class="num">≈4h20</td>
+            <td class="num">≈HK$260</td>
+            <td>Train is ~55 min slower; the closer terminus only wins back ~25.</td>
+          </tr>
+          <tr>
+            <td>Direct coach from HKIA</td>
+            <td class="num">≈4h50</td>
+            <td class="num">≈HK$250</td>
+            <td>Traffic risk, disembark at border. Useful fallback only.</td>
+          </tr>
+          <tr>
+            <td>Via Shenzhen (Lo Wu / Futian)</td>
+            <td class="num">5h30+</td>
+            <td class="num">Varies</td>
+            <td>Your previous route in reverse. Two separate borders, multiple changes.</td>
+          </tr>
+          <tr>
+            <td>Ferry from SkyPier</td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+            <td>Guangzhou (Lianhuashan) sailings have not reliably resumed. Don't plan on it.</td>
+          </tr>
+          <tr>
+            <td>Fly HKG → CAN</td>
+            <td class="num">4–5h</td>
+            <td class="num">High</td>
+            <td>Airport time destroys the gain on a 140&nbsp;km hop. No.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= ARRIVAL ================= -->
+<section id="arrival">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">07 — ON ARRIVAL</span>
+      <h2>Landing in <em>Guangzhou</em></h2>
+    </div>
+
+    <div class="card tint-green">
+      <h3>You're already through immigration</h3>
+      <p class="small" style="margin-bottom:0">Because both checks happened at West Kowloon, you walk off the train
+      at Guangzhou South as a domestic arrival. No queues, no forms. Just follow signs to the Metro.</p>
+    </div>
+
+    <div class="card">
+      <h3>Paying for the Metro</h3>
+      <p class="small"><b>Best:</b> Alipay or WeChat transit QR (乘车码) — select Guangzhou Metro, scan in and out,
+      distance fare charged automatically. Set this up before you travel.</p>
+      <p class="small"><b>Also works:</b> tap a contactless Visa / Mastercard directly at gates showing the card logo.</p>
+      <p class="small" style="margin-bottom:0"><b>Fallback:</b> ticket machines take cash and have an English
+      interface. Buy a single-journey token.</p>
+    </div>
+
+    <div class="card">
+      <h3>Which stop</h3>
+      <p class="small"><b>Beijing Road</b> → get off at <b>Gongyuanqian</b>. It's the Line 1 / Line 2 interchange under
+      People's Park; the pedestrian street is a short walk east.</p>
+      <p class="small" style="margin-bottom:0"><b>Yuexiu Park</b> → stay on one more stop to <b>Yuexiu Park</b> station.</p>
+    </div>
+
+    <div class="callout note">
+      <div class="h">Allow for the walk inside Guangzhou South</div>
+      <p class="small" style="margin:0">It is one of the largest stations in China. Getting from your platform down
+      to the Line 2 gates realistically takes 10 minutes on its own — that's already included in the 45-minute budget.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= CHECKLIST ================= -->
+<section id="checklist">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">08 — BEFORE YOU GO</span>
+      <h2>Pre-departure <em>checklist</em></h2>
+      <p class="lede">Tap to tick. Everything here should be done before you leave the hotel.</p>
+    </div>
+
+    <ul class="check">
+      <li><input type="checkbox" id="c1"><label for="c1">Train booked, <b>Guangzhou South</b> confirmed as the destination (not East)</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">Booking passport number matches my actual passport exactly</label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">Reservation number saved <b>offline</b> — screenshot, not just email</label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">Hotel shuttle timetable photographed at the front desk</label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">Octopus card topped up, or contactless card ready for the MTR</label></li>
+      <li><input type="checkbox" id="c6"><label for="c6">China travel eSIM installed and activated <b>while still in Hong Kong</b></label></li>
+      <li><input type="checkbox" id="c7"><label for="c7">Alipay set up with passport verification and a working card</label></li>
+      <li><input type="checkbox" id="c8"><label for="c8">Some cash yuan on hand</label></li>
+      <li><input type="checkbox" id="c9"><label for="c9">Chinese visa checked — valid, correct entry type, not expired</label></li>
+      <li><input type="checkbox" id="c10"><label for="c10">Hotel address saved <b>in Chinese characters</b> for taxi drivers</label></li>
+      <li><input type="checkbox" id="c11"><label for="c11">Offline map of Guangzhou downloaded</label></li>
+      <li><input type="checkbox" id="c12"><label for="c12">Phone charged + power bank (carried on, never in checked-style storage)</label></li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= CONTINGENCY ================= -->
+<section id="backup">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">09 — IF IT GOES WRONG</span>
+      <h2>Contingency <em>plans</em></h2>
+    </div>
+
+    <div class="card tint-amber">
+      <h4>You missed your train</h4>
+      <p class="small" style="margin-bottom:0">Go straight to a staffed ticket counter. Trains run every 20–40 minutes
+      through the day, so the practical cost is usually a rebooking fee and a wait, not a lost day. Do it immediately —
+      the later you leave it, the fewer seats remain.</p>
+    </div>
+
+    <div class="card tint-amber">
+      <h4>Your train is sold out</h4>
+      <p class="small" style="margin-bottom:0">Check first class before giving up — it often has seats when second
+      class doesn't, for roughly HK$100 more. Also check Guangzhou East as a genuine last resort: slower, but it
+      still gets you there.</p>
+    </div>
+
+    <div class="card tint-amber">
+      <h4>Rail line disrupted</h4>
+      <p class="small" style="margin-bottom:0">Fall back to the <b>direct coach from HKIA Terminal 2</b> — follow
+      "Mainland / Macao Transport" signage to the service counters. Departures roughly every 30–60 minutes from
+      about 07:20 to 22:00, around HK$250, 3.5–4 hours. Your hotel's airport shuttle gets you to the terminal.</p>
+    </div>
+
+    <div class="card tint-amber">
+      <h4>You're refused at immigration</h4>
+      <p class="small" style="margin-bottom:0">Almost always a visa validity or entry-count issue. You'll be turned
+      back into Hong Kong, not detained. Have your visa details and a Hong Kong fallback plan; the US Consulate
+      General Hong Kong is the relevant contact.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ================= CONFIDENCE ================= -->
+<section id="confidence">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="num">10 — HONESTY</span>
+      <h2>Confidence &amp; <em>verify on the day</em></h2>
+      <p class="lede">Every fact in this document, graded. Where sources disagreed, I've said so rather than
+      picking a number and pretending.</p>
+    </div>
+
+    <div class="card">
+      <ul class="conf">
+        <li><span class="lv hard">Solid</span> Co-location immigration at West Kowloon; gates open T−15, close T−5.
+        Consistent across official and secondary sources.</li>
+
+        <li><span class="lv hard">Solid</span> Guangzhou East services really are ~1h40–1h48. Confirmed against
+        Chinese-language timetables with specific train numbers (G6545 08:33→10:21, G6565 09:30→11:18,
+        G6553 10:25→12:05).</li>
+
+        <li><span class="lv hard">Solid</span> Nam Cheong is a cross-platform interchange; Austin connects to West
+        Kowloon by a 3–5 minute covered walkway.</li>
+
+        <li><span class="lv hard">Solid</span> Passport is a valid booking ID; no paper ticket collection needed.</li>
+
+        <li><span class="lv soft">Approximate</span> <b>Train fare.</b> Second class quoted variously as ¥185–¥215
+        and HK$213–247 depending on service and source. Budget HK$250.</li>
+
+        <li><span class="lv soft">Approximate</span> <b>MTR fare Tung Chung → Austin.</b> I could not confirm the
+        exact figure; expect roughly HK$18–20. Every station displays exact fares on a board.</li>
+
+        <li><span class="lv soft">Approximate</span> <b>Guangzhou South → Gongyuanqian metro time.</b> Sources say
+        33 min and 43 min. I've used 45 to be safe.</li>
+
+        <li><span class="lv soft">Approximate</span> <b>Last train.</b> Quoted between 22:37 and 23:00. Don't plan
+        around the final departure.</li>
+
+        <li><span class="lv soft">Approximate</span> <b>Booking window.</b> Cited as both 14 and 15 days. Book early
+        and it doesn't matter.</li>
+
+        <li><span class="lv check">Verify</span> <b>Hotel shuttle times.</b> I could not retrieve the timetable —
+        the Marriott PDF was unreachable. <b>Get it from the front desk.</b> This is the one item that could
+        actually derail the plan.</li>
+
+        <li><span class="lv check">Verify</span> <b>Live schedule for your date.</b> Train numbers and times shift
+        with seasonal timetables. Confirm when you book.</li>
+
+        <li><span class="lv check">Verify</span> <b>Station level numbering.</b> Sources describe West Kowloon's
+        floors inconsistently (B1/B2/B3 vs B3/B4). The sequence of steps is right; follow signage rather than
+        my floor labels.</li>
+      </ul>
+    </div>
+
+    <div class="callout warn">
+      <div class="h">Research constraint, stated plainly</div>
+      <p class="small" style="margin:0">This guide was assembled from search results across official rail sites,
+      travel operators, forums and Chinese-language timetables. Direct page fetching was blocked by a network
+      policy for most travel domains, so a handful of figures could not be read off a primary source and are
+      marked <em>Approximate</em> or <em>Verify</em> above. Nothing marked Solid rests on a single source.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="kicker">End of dossier</span>
+    <p style="margin:10px 0 0"><b>One sentence version:</b> Hotel shuttle to Tung Chung, Tung Chung Line to
+    Nam Cheong, cross the platform to Austin, walk five minutes to West Kowloon, be there 75 minutes early,
+    take any G-train to <b>Guangzhou South</b>, then Metro Line 2 straight to Gongyuanqian.</p>
+    <p style="margin:14px 0 0;font-size:12px;color:#8A8175">Built for offline use — no network required.
+    Times and fares are estimates; confirm live schedules when booking.</p>
+  </div>
+</footer>
+
+<button id="tocbtn" aria-label="Toggle contents">CONTENTS</button>
+<nav id="toc" aria-label="Table of contents">
+  <a href="#verdict"><span>00</span>The decision</a>
+  <a href="#map"><span>01</span>Route map</a>
+  <a href="#legs"><span>02</span>Leg by leg</a>
+  <a href="#timing"><span>03</span>What time to leave</a>
+  <a href="#booking"><span>04</span>Tickets</a>
+  <a href="#avoid"><span>05</span>Things to avoid</a>
+  <a href="#compare"><span>06</span>Rejected options</a>
+  <a href="#arrival"><span>07</span>On arrival</a>
+  <a href="#checklist"><span>08</span>Checklist</a>
+  <a href="#backup"><span>09</span>If it goes wrong</a>
+  <a href="#confidence"><span>10</span>Confidence</a>
+</nav>
+
+<script>
+(function(){
+  var bar=document.getElementById('bar');
+  function upd(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop||document.body.scrollTop)/max*100:0)+'%';
+  }
+  document.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  upd();
+
+  var btn=document.getElementById('tocbtn'),toc=document.getElementById('toc');
+  btn.addEventListener('click',function(e){e.stopPropagation();toc.classList.toggle('open');});
+  toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open');});
+  document.addEventListener('click',function(e){
+    if(!toc.contains(e.target)&&e.target!==btn)toc.classList.remove('open');
+  });
+})();
+</script>
+</body>
+</html>
