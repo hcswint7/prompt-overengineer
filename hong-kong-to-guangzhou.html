@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<title>HKG → Guangzhou · Field Guide</title>
+<title>HK → Guangzhou (Tianhe) · Field Guide</title>
 <style>
 /* ============================================================
    HK → GUANGZHOU FIELD GUIDE
@@ -224,9 +224,10 @@ hr.hair{border:none;border-top:1px solid var(--hair);margin:18px 0}
   border:1.5px solid var(--rule);border-radius:14px;background:var(--paper2)}
 table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
 /* 2-column tables must fit a phone without sideways scrolling */
-.tblwrap.fit{overflow-x:visible}
+.tblwrap.fit{overflow-x:auto}          /* auto, not visible: never spill onto the page */
 .tblwrap.fit table{min-width:0}
-.tblwrap.fit td.num{font-size:13px;padding-right:6px}
+.tblwrap.fit td.num{font-size:13px;padding-right:6px;white-space:normal}
+.tblwrap.fit th,.tblwrap.fit td{padding:9px 8px}
 th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--hair);vertical-align:top}
 th{
   font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
@@ -368,13 +369,13 @@ footer .kicker{color:#8A8175}
     <h1>Hong&nbsp;Kong<em>to Guangzhou</em></h1>
     <div class="heroline">
       <span><b>FROM</b> Four Points by Sheraton, Tung Chung</span>
-      <span><b>TO</b> Yuexiu Park / Beijing Road</span>
+      <span><b>TO</b> Tianhe District, Guangzhou</span>
     </div>
     <div class="meta">
       <span class="chip solid">Strategy locked</span>
       <span class="chip b">High-speed rail</span>
       <span class="chip g">≈ HK$260 total</span>
-      <span class="chip a">≈ 3 hrs 50 door-to-door</span>
+      <span class="chip a">≈ 4 hrs 20 door-to-door</span>
       <span class="chip">US passport · China visa held</span>
     </div>
   </div>
@@ -387,28 +388,33 @@ footer .kicker{color:#8A8175}
   <div class="wrap">
     <div class="verdict">
       <span class="kicker">The decision</span>
-      <h2>Take the train.<em>Guangzhou South.</em></h2>
+      <h2>Take the train.<em>Guangzhou East.</em></h2>
       <p class="small">Tung Chung Line to Austin, walk the covered bridge into West Kowloon, clear both
-      borders in one building, then 47–65 minutes of 300&nbsp;km/h to Guangzhou South and a single
-      no-transfer Metro Line 2 ride into the middle of the city.</p>
+      borders in one building, then a direct G-train to <b>Guangzhou East — a station that is itself in
+      Tianhe</b>. Step off and you are two metro stops from Tiyu Xilu.</p>
+      <p class="small"><b>Why not Guangzhou South?</b> Because you're going to Tianhe. The South train is
+      55 minutes quicker, but South then costs you roughly an hour of metro with a transfer at Gongyuanqian.
+      Door-to-door the two land within five minutes of each other — so the tiebreaker is the end of the
+      journey, not the middle.</p>
       <ol class="vsteps">
         <li><span class="t">~10 min</span><b>Hotel shuttle</b> → Tung Chung MTR</li>
         <li><span class="t">~25 min</span><b>Tung Chung Line</b> → Nam Cheong</li>
         <li><span class="t">~5 min</span><b>Cross-platform</b> → Tuen Ma Line → Austin</li>
         <li><span class="t">~10 min</span><b>Covered walkway</b> → West Kowloon Station</li>
         <li><span class="t">~75 min</span><b>Check-in + both borders</b> (co-located)</li>
-        <li><span class="t">~50 min</span><b>G-train</b> → Guangzhou South</li>
-        <li><span class="t">~55 min</span><b>Station walk + Metro Line 2</b> → Gongyuanqian</li>
+        <li><span class="t">~105 min</span><b>G-train</b> → Guangzhou East</li>
+        <li><span class="t">~20 min</span><b>Station walk + Line 1 or 3</b> → Tiyu Xilu</li>
       </ol>
-      <p class="tiny" style="color:#9C9384;margin:12px 0 0">Totals 3 h 50 m including realistic waits.
-      Tighten the station buffer to 45 minutes once you know the route and it's about 3 h 20 m.</p>
+      <p class="tiny" style="color:#9C9384;margin:12px 0 0">That's <b>4 h 10 m</b> of actual moving time. The timing
+      table in section 03 adds a 10-minute cushion at West Kowloon, so plan on <b>4 h 20 m</b> door to door.
+      Tighten the station buffer to 45 minutes once you know the route and it drops to about 3 h 50 m.</p>
     </div>
 
     <div class="tiles">
       <div class="tile hi">
         <div class="lab">Door to door</div>
-        <div class="val">3h50</div>
-        <div class="sub">3h20 with a tighter buffer</div>
+        <div class="val">4h20</div>
+        <div class="sub">4h10 moving · 3h50 tighter buffer</div>
       </div>
       <div class="tile">
         <div class="lab">Total cost</div>
@@ -417,22 +423,22 @@ footer .kicker{color:#8A8175}
       </div>
       <div class="tile">
         <div class="lab">On the train</div>
-        <div class="val">47<span style="font-size:.5em"> min</span></div>
-        <div class="sub">Fastest service; 50–65 typical</div>
+        <div class="val">1h45</div>
+        <div class="sub">Not 47 min — see the traps</div>
       </div>
       <div class="tile">
-        <div class="lab">Border stops</div>
-        <div class="val">1</div>
-        <div class="sub">One queue, both sides</div>
+        <div class="lab">Metro at the end</div>
+        <div class="val">2</div>
+        <div class="sub">Stops to Tiyu Xilu · no transfer</div>
       </div>
     </div>
 
     <div class="callout good">
       <div class="h">Why this beats the coach</div>
       <p class="small" style="margin:0">The direct HKIA→Guangzhou coach costs about the same (HK$250) but the ride
-      alone is 3–3.5 hours — closer to <b>4h50 door to door</b>, an hour worse than the train. It sits in traffic,
-      and it makes you get off at the border, walk through immigration, and re-board. The train is faster, runs to
-      a fixed schedule, and you clear both borders standing still in one building.</p>
+      alone is 3–3.5 hours — closer to <b>5 hours door to door</b> once you add the drop-off transfer into Tianhe.
+      It sits in traffic, and it makes you get off at the border, walk through immigration, and re-board. The train
+      runs to a fixed schedule and you clear both borders standing still in one building.</p>
     </div>
   </div>
 </section>
@@ -480,20 +486,20 @@ footer .kicker{color:#8A8175}
           <text x="70" y="262" font-size="10.5" fill="#8A8175">Check-in + BOTH borders · budget 75 min</text>
 
           <circle cx="46" cy="300" r="7" fill="#5C36A0"/>
-          <text x="70" y="291" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">G-train · 300 km/h</text>
-          <text x="70" y="307" font-size="10.5" fill="#8A8175">Futian · Shenzhen North · Humen</text>
+          <text x="70" y="291" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">G-train · ≈1 h 45 m</text>
+          <text x="70" y="307" font-size="10.5" fill="#8A8175">Shenzhen North · Dongguan · Changping</text>
 
           <rect x="36" y="330" width="20" height="20" rx="4" fill="#5C36A0"/>
-          <text x="70" y="338" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Guangzhou South</text>
-          <text x="70" y="354" font-size="10.5" fill="#8A8175">Arrive · walk down to Metro</text>
+          <text x="70" y="338" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Guangzhou East — in Tianhe</text>
+          <text x="70" y="354" font-size="10.5" fill="#8A8175">You have arrived in your district</text>
 
           <circle cx="46" cy="386" r="7" fill="#1B6E46"/>
-          <text x="70" y="383" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Metro Line 2 · no transfer</text>
-          <text x="70" y="399" font-size="10.5" fill="#8A8175">≈12 stops · 35–45 min · ¥6</text>
+          <text x="70" y="383" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Metro Line 1 or 3 · no transfer</text>
+          <text x="70" y="399" font-size="10.5" fill="#8A8175">2 stops · ≈6 min · ¥2–4</text>
 
           <circle cx="46" cy="428" r="9" fill="#1B6E46"/>
-          <text x="70" y="425" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Gongyuanqian / Yuexiu Park</text>
-          <text x="70" y="441" font-size="10.5" fill="#8A8175">Beijing Road is a short walk from Gongyuanqian</text>
+          <text x="70" y="425" font-size="13" font-weight="700" fill="#14110E" font-family="-apple-system,Helvetica,Arial,sans-serif">Tiyu Xilu · heart of Tianhe</text>
+          <text x="70" y="441" font-size="10.5" fill="#8A8175">Zhujiang New Town: 1 more stop on Line 3</text>
         </g>
 
         <!-- border marker -->
@@ -636,12 +642,27 @@ footer .kicker{color:#8A8175}
       <li>
         <div class="node violet"><svg><use href="#i-train"/></svg></div>
         <div class="card flat">
-          <h3>The train — West Kowloon → Guangzhou South</h3>
-          <p class="small">Roughly <b>50–60 departures a day</b>, first around <b>07:20</b>, last around
-          <b>22:40</b>. Typical stops are Futian, Shenzhen North, Humen and Qingsheng.</p>
-          <p class="small" style="margin-bottom:0">Second class is perfectly comfortable for under an hour and is
-          what you want. First class is roughly 55% more for a marginally wider seat on a 50-minute ride.</p>
-          <div class="legmeta"><span>47 MIN FASTEST</span><span>50–65 TYPICAL</span><span>≈HK$215–247</span><span>2ND CLASS</span></div>
+          <h3>The train — West Kowloon → Guangzhou East</h3>
+          <p class="small">This is the part where you trade time for position. The Guangzhou East service does
+          <b>not</b> use the full high-speed alignment — it runs via the Dongguan corridor and makes real stops
+          along the way. Verified examples:</p>
+          <div class="tblwrap fit" style="margin-bottom:12px">
+            <table>
+              <thead><tr><th>Train</th><th>Timing</th></tr></thead>
+              <tbody>
+                <tr><td class="num"><b>G6554</b></td><td>West Kowloon 09:28 → Gz East 11:11 · <b>1h43</b></td></tr>
+                <tr><td class="num"><b>G6545</b></td><td>Gz East 08:33 → West Kowloon 10:21 · <b>1h48</b></td></tr>
+                <tr><td class="num"><b>G6553</b></td><td>Gz East 10:25 → West Kowloon 12:05 · <b>1h41</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">Intermediate stops typically include Shenzhen North, Guangmingcheng, Dongguan South,
+          Changping, Dongguan and Xintang.</p>
+          <p class="small" style="margin-bottom:0">Departures are <b>far less frequent than Guangzhou South</b> —
+          think roughly hourly rather than every 20 minutes. That's the real cost of this choice, and it's why you
+          book ahead. Second class is fine; at 1h45 you may appreciate first class more than you would on the
+          50-minute South run.</p>
+          <div class="legmeta"><span>≈1H45</span><span>~HOURLY</span><span>≈HK$215–247</span><span>SAME FARE AS SOUTH</span></div>
           <div class="callout note" style="margin:12px 0 0">
             <div class="h">Luggage</div>
             <p class="small" style="margin:0">No checked bags — everything comes onboard with you. Official limit is
@@ -654,17 +675,13 @@ footer .kicker{color:#8A8175}
       <li>
         <div class="node green"><svg><use href="#i-metro"/></svg></div>
         <div class="card flat">
-          <h3>Guangzhou South → your hotel</h3>
-          <p class="small">Guangzhou South is enormous. Follow signs down to <b>Metro Line 2</b> — allow 10 minutes
-          just to walk it. Line 2 <b>starts here</b>, so you board at the terminus and get a seat.</p>
-          <p class="small"><b>No transfer required.</b> Stay on Line 2 all the way:</p>
-          <div style="margin:0 0 12px">
-            <span class="chip g">Gongyuanqian · for Beijing Road</span>
-            <span class="chip g">Yuexiu Park · 1 stop further</span>
-          </div>
-          <p class="small" style="margin-bottom:0">Sources disagree on timing between 33 and 43 minutes — <b>budget 45</b>.
-          Fare is about <b>¥6</b>.</p>
-          <div class="legmeta"><span>LINE 2</span><span>≈12 STOPS</span><span>NO TRANSFER</span><span>¥6</span></div>
+          <h3>Guangzhou East → your hotel</h3>
+          <p class="small">This is the payoff. Guangzhou East is a manageable station, not a monster like Guangzhou
+          South, and <b>you are already in Tianhe when you step off</b>. Walk down the exit tunnel to the underground
+          lobby; the metro entrances are right there. Use <b>Exits E, I or G</b> — those are nearest the station building.</p>
+          <p class="small">Guangzhou East is served by <b>Line 1, Line 3 and Line 11</b>, and both Line 1 and Line 3
+          reach Tiyu Xilu in <b>two stops</b>.</p>
+          <div class="legmeta"><span>LINE 1 · 3 · 11</span><span>2 STOPS</span><span>≈6 MIN</span><span>¥2–4</span></div>
         </div>
       </li>
     </ul>
@@ -706,7 +723,8 @@ footer .kicker{color:#8A8175}
     <div class="callout">
       <div class="h">Worked example</div>
       <p class="small" style="margin:0">For a <b>10:00 train</b>, leave the hotel at <b>07:45</b> and be inside
-      West Kowloon by <b>08:45</b>. You'd reach Gongyuanqian around <b>11:45</b>.</p>
+      West Kowloon by <b>08:45</b>. You'd arrive Guangzhou East around <b>11:45</b> and be at Tiyu Xilu by
+      roughly <b>12:05</b>.</p>
     </div>
 
     <div class="callout note">
@@ -729,8 +747,15 @@ footer .kicker{color:#8A8175}
 
     <div class="card">
       <h3>Book ahead, not at the station</h3>
-      <p class="small">The booking window opens roughly <b>14–15 days</b> before travel. The fastest trains
-      genuinely sell out, especially around weekends and holidays. Book as soon as your date is fixed.</p>
+      <p class="small">The booking window opens roughly <b>14–15 days</b> before travel. Book as soon as your date
+      is fixed — and this matters <b>more</b> on this route than on the Guangzhou South run, because Guangzhou East
+      has only about one departure an hour. Fewer trains means fewer second chances.</p>
+      <div class="callout warn" style="margin:0 0 14px">
+        <div class="h">Check the destination field</div>
+        <p class="small" style="margin:0">Search results will mix <b>Guangzhou South (广州南)</b>, <b>Guangzhou East
+        (广州东)</b> and plain <b>Guangzhou (广州)</b>. You want <b>Guangzhou East</b>. They are ~20&nbsp;km and an hour
+        of metro apart, and the booking page will not warn you.</p>
+      </div>
       <p class="small" style="margin-bottom:0">Your passport is a valid booking ID — the same passport you use to
       book <b>is</b> your ticket.</p>
     </div>
@@ -773,14 +798,24 @@ footer .kicker{color:#8A8175}
 
     <ul class="avoid">
       <li>
-        <span class="t">Don't book a train to Guangzhou <u>East</u></span>
-        <span class="why">It looks better on a map — Guangzhou East is in Tianhe, much closer to the centre than
-        Guangzhou South. Several booking sites advertise it at "47 minutes". <b>That figure is wrong.</b>
-        Actual Guangzhou East services run roughly <b>1h40–1h48</b> because they route via the conventional
-        Guangshen railway through Dongguan, not the full high-speed alignment. Real examples: G6545, G6565, G6553
-        all take about 1h45.</span>
-        <span class="fix"><b>INSTEAD →</b> Guangzhou South. The extra ~25 minutes of metro is far cheaper than
-        the ~55 extra minutes on the train. South also has 50+ daily departures vs roughly 13–26 to East.</span>
+        <span class="t">Don't expect the Guangzhou East train to be quick</span>
+        <span class="why">Trip.com and several aggregators advertise West Kowloon → Guangzhou East at
+        <b>"47 minutes"</b>. That number is borrowed from the Guangzhou <em>South</em> route and is simply wrong for
+        East. Real Guangzhou East services run <b>1h41–1h48</b> because they leave the high-speed alignment and run
+        via the Dongguan corridor with real intermediate stops. Verified: G6554 (09:28→11:11), G6545 (08:33→10:21),
+        G6553 (10:25→12:05).</span>
+        <span class="fix"><b>SO →</b> Budget 1h45 on the train, not 50 minutes. You are choosing East for
+        <em>where it puts you</em>, not for speed. If you plan around 47 minutes you will misjudge your whole day.</span>
+      </li>
+
+      <li>
+        <span class="t">Don't default to Guangzhou South just because everyone says so</span>
+        <span class="why">Guangzhou South is the standard recommendation and it is the right answer for most
+        destinations — but it sits about 20&nbsp;km south of the city in Panyu. For a <b>Tianhe</b> stay it costs you
+        roughly an hour of metro plus a transfer at Gongyuanqian, one of the busiest interchanges in Guangzhou, at the
+        end of a long day with luggage.</span>
+        <span class="fix"><b>INSTEAD →</b> Guangzhou East. Door-to-door the two are within five minutes of each
+        other, the fare is identical, and East drops you two stops from Tiyu Xilu.</span>
       </li>
 
       <li>
@@ -841,46 +876,51 @@ footer .kicker{color:#8A8175}
     </div>
 
     <figure>
-      <svg viewBox="0 0 360 220" role="img" aria-label="Bar chart comparing door-to-door journey times">
-        <rect width="360" height="220" fill="#FFFFFF"/>
+      <svg viewBox="0 0 360 292" role="img" aria-label="Bar chart comparing door-to-door journey times into Tianhe">
+        <rect width="360" height="292" fill="#FFFFFF"/>
         <g font-family="-apple-system,Helvetica,Arial,sans-serif">
-          <text x="18" y="24" font-size="11" font-weight="700" fill="#14110E">DOOR-TO-DOOR TIME (HOURS)</text>
+          <text x="18" y="24" font-size="11" font-weight="700" fill="#14110E">DOOR-TO-DOOR INTO TIANHE</text>
 
           <!-- gridlines · scale: 40px = 1 hour -->
           <g stroke="#EFEADF" stroke-width="1">
-            <line x1="18" y1="40" x2="18" y2="186"/>
-            <line x1="98" y1="40" x2="98" y2="186"/>
-            <line x1="178" y1="40" x2="178" y2="186"/>
-            <line x1="258" y1="40" x2="258" y2="186"/>
+            <line x1="18" y1="34" x2="18" y2="250"/>
+            <line x1="98" y1="34" x2="98" y2="250"/>
+            <line x1="178" y1="34" x2="178" y2="250"/>
+            <line x1="258" y1="34" x2="258" y2="250"/>
           </g>
 
-          <rect x="18" y="48" width="153" height="24" rx="5" fill="#1B6E46"/>
-          <text x="179" y="65" font-size="11.5" font-weight="700" fill="#1B6E46">3h50</text>
-          <text x="18" y="43" font-size="10.5" font-weight="700" fill="#14110E">HSR via Guangzhou South ✓</text>
+          <text x="18" y="43" font-size="10.5" font-weight="700" fill="#14110E">HSR via Guangzhou East ✓</text>
+          <rect x="18" y="50" width="173" height="20" rx="4" fill="#1B6E46"/>
+          <text x="199" y="64" font-size="11.5" font-weight="700" fill="#1B6E46">4h20</text>
 
-          <rect x="18" y="86" width="173" height="24" rx="5" fill="#8A8175"/>
-          <text x="199" y="103" font-size="11.5" font-weight="700" fill="#4A443C">4h20</text>
-          <text x="18" y="81" font-size="10.5" fill="#4A443C">HSR via Guangzhou East</text>
+          <text x="18" y="87" font-size="10.5" fill="#4A443C">Gz South + Line 2 &amp; transfer</text>
+          <rect x="18" y="94" width="170" height="20" rx="4" fill="#8A8175"/>
+          <text x="196" y="108" font-size="11.5" font-weight="700" fill="#4A443C">4h15</text>
 
-          <rect x="18" y="124" width="193" height="24" rx="5" fill="#8A8175"/>
-          <text x="219" y="141" font-size="11.5" font-weight="700" fill="#4A443C">4h50</text>
-          <text x="18" y="119" font-size="10.5" fill="#4A443C">Direct coach from HKIA</text>
+          <text x="18" y="131" font-size="10.5" fill="#9A6B04">Gz South + L22/18 express — UNVERIFIED</text>
+          <rect x="18" y="138" width="153" height="20" rx="4" fill="#FBF0D8" stroke="#C8890B" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="179" y="152" font-size="11.5" font-weight="700" fill="#9A6B04">3h50?</text>
 
-          <rect x="18" y="162" width="220" height="24" rx="5" fill="#C93A24"/>
-          <text x="246" y="179" font-size="11.5" font-weight="700" fill="#C93A24">5h30+</text>
-          <text x="18" y="157" font-size="10.5" fill="#4A443C">Via Shenzhen (your last route)</text>
+          <text x="18" y="175" font-size="10.5" fill="#4A443C">Direct coach from HKIA</text>
+          <rect x="18" y="182" width="200" height="20" rx="4" fill="#8A8175"/>
+          <text x="226" y="196" font-size="11.5" font-weight="700" fill="#4A443C">5h00</text>
+
+          <text x="18" y="219" font-size="10.5" fill="#4A443C">Via Shenzhen (your last route)</text>
+          <rect x="18" y="226" width="220" height="20" rx="4" fill="#C93A24"/>
+          <text x="246" y="240" font-size="11.5" font-weight="700" fill="#C93A24">5h30+</text>
 
           <!-- axis -->
           <g font-family="ui-monospace,Menlo,monospace" font-size="9" fill="#8A8175">
-            <text x="18" y="200">0</text>
-            <text x="94" y="200">2h</text>
-            <text x="174" y="200">4h</text>
-            <text x="254" y="200">6h</text>
+            <text x="18" y="266">0</text>
+            <text x="94" y="266">2h</text>
+            <text x="174" y="266">4h</text>
+            <text x="254" y="266">6h</text>
           </g>
-          <text x="18" y="214" font-size="9" fill="#8A8175" font-family="ui-monospace,Menlo,monospace">Includes station buffer + city transfer at both ends</text>
+          <text x="18" y="282" font-size="9" fill="#8A8175" font-family="ui-monospace,Menlo,monospace">Hotel lobby → Tiyu Xilu · incl. 75 min buffer</text>
         </g>
       </svg>
-      <figcaption>Times are realistic door-to-door estimates from Tung Chung to Yuexiu Park / Beijing Road, not raw vehicle times.</figcaption>
+      <figcaption>The top two are a dead heat — which is exactly why the tiebreaker is transfers and station size, not
+      minutes. The dashed amber bar is a possible upgrade I could not confirm; see the confidence section.</figcaption>
     </figure>
 
     <p class="tiny mono" style="color:var(--ink3);margin:0 0 6px">Swipe the table sideways for the verdict column →</p>
@@ -891,20 +931,26 @@ footer .kicker{color:#8A8175}
         </thead>
         <tbody>
           <tr class="win">
-            <td><b>HSR → Guangzhou South</b></td>
-            <td class="num">≈3h50</td>
-            <td class="num">≈HK$260</td>
-            <td>Fastest, most frequent, one border queue. <b>Chosen.</b></td>
-          </tr>
-          <tr>
-            <td>HSR → Guangzhou East</td>
+            <td><b>HSR → Guangzhou East</b></td>
             <td class="num">≈4h20</td>
             <td class="num">≈HK$260</td>
-            <td>Train is ~55 min slower; the closer terminus only wins back ~25.</td>
+            <td>Slowest train, shortest tail. Lands you in Tianhe. <b>Chosen.</b></td>
+          </tr>
+          <tr>
+            <td>HSR → Guangzhou South, then Line 2 + transfer</td>
+            <td class="num">≈4h15</td>
+            <td class="num">≈HK$260</td>
+            <td>Five minutes faster on paper, two extra transfers and a giant station. Not worth it for Tianhe.</td>
+          </tr>
+          <tr>
+            <td>HSR → Guangzhou South, then Line 22 + 18 express</td>
+            <td class="num">≈3h50?</td>
+            <td class="num">≈HK$265</td>
+            <td><b>Unverified.</b> Would be the winner if it runs as advertised — check on the day.</td>
           </tr>
           <tr>
             <td>Direct coach from HKIA</td>
-            <td class="num">≈4h50</td>
+            <td class="num">≈5h00</td>
             <td class="num">≈HK$250</td>
             <td>Traffic risk, disembark at border. Useful fallback only.</td>
           </tr>
@@ -945,7 +991,7 @@ footer .kicker{color:#8A8175}
     <div class="card tint-green">
       <h3>You're already through immigration</h3>
       <p class="small" style="margin-bottom:0">Because both checks happened at West Kowloon, you walk off the train
-      at Guangzhou South as a domestic arrival. No queues, no forms. Just follow signs to the Metro.</p>
+      at Guangzhou East as a domestic arrival. No queues, no forms. Just follow signs to the Metro.</p>
     </div>
 
     <div class="card">
@@ -958,16 +1004,44 @@ footer .kicker{color:#8A8175}
     </div>
 
     <div class="card">
-      <h3>Which stop</h3>
-      <p class="small"><b>Beijing Road</b> → get off at <b>Gongyuanqian</b>. It's the Line 1 / Line 2 interchange under
-      People's Park; the pedestrian street is a short walk east.</p>
-      <p class="small" style="margin-bottom:0"><b>Yuexiu Park</b> → stay on one more stop to <b>Yuexiu Park</b> station.</p>
+      <h3>Which stop for your corner of Tianhe</h3>
+      <p class="small">All of these start from Guangzhou East. Nothing here needs a transfer except where noted.</p>
+      <div class="tblwrap fit">
+        <table>
+          <thead><tr><th>If you're staying near</th><th>Get off at</th></tr></thead>
+          <tbody>
+            <tr class="win">
+              <td>Tianhe Road, Teemall, Grandview, Tianhe Sports Center</td>
+              <td><b>Tiyu Xilu</b><br><span class="tiny">Line 1 or 3 · 2 stops</span></td>
+            </tr>
+            <tr>
+              <td>Zhujiang New Town / CBD, IFC</td>
+              <td><b>Zhujiang New Town</b><br><span class="tiny">Line 3 · 3 stops</span></td>
+            </tr>
+            <tr>
+              <td>Canton Tower</td>
+              <td><b>Canton Tower</b><br><span class="tiny">Line 3 · 4 stops</span></td>
+            </tr>
+            <tr>
+              <td>Gangding / Shipaiqiao (university belt)</td>
+              <td><b>Gangding</b><br><span class="tiny">Line 3 via Tiyu Xilu</span></td>
+            </tr>
+            <tr>
+              <td>Anywhere else in Tianhe</td>
+              <td><b>Taxi or DiDi</b><br><span class="tiny">10–20 min from the station</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin:12px 0 0"><b>Tiyu Zhongxin</b> (Tianhe Sports Center) sits between Guangzhou East
+      and Tiyu Xilu on Line 1 — if your hotel is north of the sports complex, that's your stop instead.</p>
     </div>
 
-    <div class="callout note">
-      <div class="h">Allow for the walk inside Guangzhou South</div>
-      <p class="small" style="margin:0">It is one of the largest stations in China. Getting from your platform down
-      to the Line 2 gates realistically takes 10 minutes on its own — that's already included in the 45-minute budget.</p>
+    <div class="callout good">
+      <div class="h">The advantage, concretely</div>
+      <p class="small" style="margin:0">From Guangzhou East, a taxi to almost anywhere in Tianhe is a short hop.
+      Had you come into Guangzhou South you would still be 20&nbsp;km south of the city in Panyu, facing an hour of
+      metro. That's the whole reason for this routing.</p>
     </div>
   </div>
 </section>
@@ -984,7 +1058,7 @@ footer .kicker{color:#8A8175}
     </div>
 
     <ul class="check">
-      <li><input type="checkbox" id="c1"><label for="c1">Train booked, <b>Guangzhou South</b> confirmed as the destination (not East)</label></li>
+      <li><input type="checkbox" id="c1"><label for="c1">Train booked, <b>Guangzhou East (广州东)</b> confirmed as the destination — not South, not plain "Guangzhou"</label></li>
       <li><input type="checkbox" id="c2"><label for="c2">Booking passport number matches my actual passport exactly</label></li>
       <li><input type="checkbox" id="c3"><label for="c3">Reservation number saved <b>offline</b> — screenshot, not just email</label></li>
       <li><input type="checkbox" id="c4"><label for="c4">Hotel shuttle timetable photographed at the front desk</label></li>
@@ -1020,8 +1094,9 @@ footer .kicker{color:#8A8175}
     <div class="card tint-amber">
       <h4>Your train is sold out</h4>
       <p class="small" style="margin-bottom:0">Check first class before giving up — it often has seats when second
-      class doesn't, for roughly HK$100 more. Also check Guangzhou East as a genuine last resort: slower, but it
-      still gets you there.</p>
+      class doesn't, for roughly HK$100 more. Failing that, <b>take Guangzhou South instead</b>: there are 50+
+      departures a day so something will be available, and you accept about an hour of Metro Line 2 plus a transfer
+      at Gongyuanqian to reach Tianhe. Slower at the end, but it gets you there today.</p>
     </div>
 
     <div class="card tint-amber">
@@ -1057,9 +1132,13 @@ footer .kicker{color:#8A8175}
         <li><span class="lv hard">Solid</span> Co-location immigration at West Kowloon; gates open T−15, close T−5.
         Consistent across official and secondary sources.</li>
 
-        <li><span class="lv hard">Solid</span> Guangzhou East services really are ~1h40–1h48. Confirmed against
-        Chinese-language timetables with specific train numbers (G6545 08:33→10:21, G6565 09:30→11:18,
-        G6553 10:25→12:05).</li>
+        <li><span class="lv hard">Solid</span> <b>Guangzhou East trains take ~1h45, not 47 minutes.</b> Confirmed in
+        both directions against Chinese-language timetables with named trains and full stop lists: G6554
+        (West Kowloon 09:28 → Gz East 11:11), G6545 (08:33→10:21, 8 stops via Xintang/Dongguan/Changping),
+        G6553 (10:25→12:05).</li>
+
+        <li><span class="lv hard">Solid</span> Guangzhou East is served by Metro Lines 1, 3 and 11, and sits in
+        Tianhe. Both Line 1 and Line 3 reach Tiyu Xilu in two stops; Zhujiang New Town is one further on Line 3.</li>
 
         <li><span class="lv hard">Solid</span> Nam Cheong is a cross-platform interchange; Austin connects to West
         Kowloon by a 3–5 minute covered walkway.</li>
@@ -1072,8 +1151,22 @@ footer .kicker{color:#8A8175}
         <li><span class="lv soft">Approximate</span> <b>MTR fare Tung Chung → Austin.</b> I could not confirm the
         exact figure; expect roughly HK$18–20. Every station displays exact fares on a board.</li>
 
-        <li><span class="lv soft">Approximate</span> <b>Guangzhou South → Gongyuanqian metro time.</b> Sources say
-        33 min and 43 min. I've used 45 to be safe.</li>
+        <li><span class="lv soft">Approximate</span> <b>Guangzhou East departure frequency.</b> Sources conflict
+        badly — anywhere from 13 to 26 daily services, and one aggregator claims 60 (almost certainly counting
+        Guangzhou South too). Treat it as roughly hourly and book ahead.</li>
+
+        <li><span class="lv soft">Approximate</span> <b>Guangzhou South → Gongyuanqian metro time</b> (for the
+        rejected alternative). Sources say 33 min and 43 min; I used 45.</li>
+
+        <li><span class="lv check">Verify</span> <b>The Line 22 + Line 18 express shortcut.</b> On paper, Guangzhou
+        South → Line 22 → Panyu Square → Line 18 express → Xiancun could reach Tianhe in ~30 minutes and would make
+        Guangzhou South the faster option overall (~3h50). I could <b>not</b> confirm that Line 22 currently serves
+        Guangzhou South with a working Panyu Square interchange. <b>Check a live router (Amap, MetroMan) before you
+        book.</b> If it works, take Guangzhou South instead.</li>
+
+        <li><span class="lv check">Verify</span> <b>Line 18's northern extension to Guangzhou East.</b> Was due to
+        open in 2025 and some sources list it as open. It only adds options — the Line 1 and Line 3 connections at
+        Guangzhou East are long-standing and are what the plan relies on.</li>
 
         <li><span class="lv soft">Approximate</span> <b>Last train.</b> Quoted between 22:37 and 23:00. Don't plan
         around the final departure.</li>
@@ -1109,7 +1202,8 @@ footer .kicker{color:#8A8175}
     <span class="kicker">End of dossier</span>
     <p style="margin:10px 0 0"><b>One sentence version:</b> Hotel shuttle to Tung Chung, Tung Chung Line to
     Nam Cheong, cross the platform to Austin, walk five minutes to West Kowloon, be there 75 minutes early,
-    take any G-train to <b>Guangzhou South</b>, then Metro Line 2 straight to Gongyuanqian.</p>
+    take a G-train to <b>Guangzhou East</b> — about 1h45, not 47 minutes — then Line 1 or Line 3 two stops to
+    Tiyu Xilu, in the middle of Tianhe.</p>
     <p style="margin:14px 0 0;font-size:12px;color:#8A8175">Built for offline use — no network required.
     Times and fares are estimates; confirm live schedules when booking.</p>
   </div>
